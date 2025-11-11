@@ -4,6 +4,7 @@ import authRoutes from './routes/authRoutes';
 import { config } from 'dotenv';
 config();
 import { createClient } from '@supabase/supabase-js';
+import postRoutes from './routes/postRoutes';
 
 const app = express();
 
@@ -19,6 +20,7 @@ export const supabase = createClient(
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/posts', postRoutes);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
