@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal } from "./Modal";
 import { AuthForm } from "./Forms/AuthForm";
+import type { User } from "../interfaces/User";
 
 interface HeaderProps {
     user: User;
@@ -8,9 +9,6 @@ interface HeaderProps {
     onAuthSuccess: (user: User) => void;
 }
 
-interface User {
-    username: string;
-}
 
 export const Header = ({ user, onLogout, onAuthSuccess }: HeaderProps) => {
     const [showAuthModal, setShowAuthModal] = useState(false);

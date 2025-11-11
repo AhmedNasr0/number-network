@@ -46,7 +46,7 @@ export const CommentForm = ({ postId, parentCommentId, leftOperand, onSubmit, on
   
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`${process.env.BACKEND_URL as string}/comments`, {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL as string}/comments`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

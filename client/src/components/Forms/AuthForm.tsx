@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import type { User } from "../../interfaces/User";
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 interface AuthFormProps {
@@ -8,9 +8,6 @@ interface AuthFormProps {
   setIsLogin: (val: boolean) => void;
 }
 
-interface User {
-    username: string;
-}
 
 export const AuthForm = ({ onSuccess, isLogin, setIsLogin }: AuthFormProps) => {
     const [username, setUsername] = useState('');
