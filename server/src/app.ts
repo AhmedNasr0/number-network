@@ -1,8 +1,9 @@
+import { config } from 'dotenv';
+config();
+
 import express from 'express';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
-import { config } from 'dotenv';
-config();
 import { createClient } from '@supabase/supabase-js';
 import postRoutes from './routes/postRoutes';
 import commentRoutes from './routes/commentRoutes';
@@ -23,7 +24,7 @@ export const supabase = createClient(
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/comments', commentRoutes);
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
